@@ -9,8 +9,9 @@ textarea {
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
+  border-left: 1px solid rgb(32, 32, 32, 0.4);
   padding: 10px;
+  width:inherit;
 }
 
 .jumbotron {
@@ -58,14 +59,33 @@ textarea {
 }
 
 .saveBtn {
-  border-left: 1px solid black;
+  border-left: 3px solid rgba(16, 29, 87, 0.301);
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  border-color: rgba(16, 28, 80, 0.301);
 }
 
-.saveBtn i:hover {
+.saveBtn:hover {
   font-size: 20px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.button-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textarea-col {
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
