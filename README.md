@@ -1,2 +1,0 @@
-# Scheduler
- Work Day Scheduler
