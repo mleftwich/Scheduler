@@ -11,12 +11,12 @@ dateTime();
 // How many rows needed
 
 $(function () {
-    const rowContainer = $(".container");
-    for (let hour = 9; hour < 18; hour++) {
-      const plannerRow = createPlannerRow(hour);
-      rowContainer.append(plannerRow);
-    }
-  });
+  const rowContainer = $(".container");
+  for (let hour = 9; hour < 18; hour++) {
+    const plannerRow = createPlannerRow(hour);
+    rowContainer.append(plannerRow);
+  }
+});
 
 // Creating grid for timeblocks
 
@@ -24,7 +24,7 @@ function createPlannerRow(hour) {
   // Timeblock Row, appropriate colouring for past/present/future
 
   const row = $("<div>");
- 
+
   let rowClass = "row";
   const timeNow = moment().format("H");
   if (hour < timeNow) {
@@ -35,7 +35,7 @@ function createPlannerRow(hour) {
     rowClass = rowClass + " future";
   }
   if (hour == timeNow) {
-    rowClass = rowClass + " present"
+    rowClass = rowClass + " present";
   }
 
   row.attr("class", rowClass);
@@ -46,7 +46,7 @@ function createPlannerRow(hour) {
   timeCol.attr("class", "time-col col-2");
   timeCol.text(moment(hour, "hh").format("LT"));
 
-  // Textarea column for input
+  // Textarea column
 
   const textCol = $("<div>");
   textCol.attr("class", "textarea-col col-8");
@@ -55,6 +55,11 @@ function createPlannerRow(hour) {
 
   const textArea = $("<textarea>");
   textArea.attr("class", "textarea");
+  
+  // Get existing plans
+
+  const plansMade = localStorage.getItem(hour);
+  textArea.val(plansMade);
   textCol.append(textArea);
 
   // Column for save button
@@ -74,3 +79,18 @@ function createPlannerRow(hour) {
   return row;
 }
 
+// Save button onClick
+$(document).on("click", ".saveBtn", function (event) {
+  // Which row is targeted
+  const clickField = $(event.target);
+  const textarea = clickField.parent().prev().children();
+  const timeCol = clickField.parent().prev().prev();
+  const time = timeCol.text();
+  // Convert time back to numeric value to store in appropriate field
+
+  const hour = moment(time, "LT").format("HH");
+
+  // Get the input and save it to local storage
+  const toPlan = textarea.val();
+  localStorage.setItem(hour, toPlan);
+});
