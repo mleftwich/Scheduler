@@ -21,7 +21,8 @@ $(function () {
 // Creating grid for timeblocks
 
 function createPlannerRow(hour) {
-  // Timeblock Row, appropriate colouring for past/present/future
+
+// Timeblock Row, appropriate colouring for past/present/future
 
   const row = $("<div>");
 
@@ -63,6 +64,7 @@ function createPlannerRow(hour) {
   textCol.append(textArea);
 
   // Column for save button
+
   const buttonCol = $("<div>");
   buttonCol.attr("class", "button-col col-2");
 
@@ -74,23 +76,28 @@ function createPlannerRow(hour) {
   buttonCol.append(saveBtn);
 
   // Append all the columns to textblock row and return
-  row.append(timeCol, textCol, buttonCol);
 
+  row.append(timeCol, textCol, buttonCol);
   return row;
 }
 
 // Save button onClick
+
 $(document).on("click", ".saveBtn", function (event) {
-  // Which row is targeted
+  
+    // Which row is targeted
+
   const clickField = $(event.target);
   const textarea = clickField.parent().prev().children();
   const timeCol = clickField.parent().prev().prev();
   const time = timeCol.text();
+  
   // Convert time back to numeric value to store in appropriate field
 
   const hour = moment(time, "LT").format("HH");
 
   // Get the input and save it to local storage
+
   const toPlan = textarea.val();
   localStorage.setItem(hour, toPlan);
 });
