@@ -1,11 +1,57 @@
-# Week 5 - Work Day Scheduler
+![MIT](https://img.shields.io/static/v1?label=License&message=MIT&color=green)
+  # Workday Scheduler
+  
+  ## Table of Contents
+  * [Description](#description)
+  * [Technologies](#technologies)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Contributing](#contributing)
+  * [Guidelines](#guidelines)
+  * [Tests](#tests)
+  * [License](#license)
+  * [Questions](#questions)
+---
 
-This week's task involved creating a simple work day planner to help organize your schedule. This consisted of a table listing the hours from 9-5, a textarea for user input, and a save button to grab the input from the textarea and save it to local storage - to then be displayed in the appropriate timeslot.
+  ## Description
+ Application designed to make organizing an average workday simpler by sorting todo tasks by time in a clear and intuitive UI. Features current date and live clock using moment.js. User simply clicks on desired time slot and enters information. Current time slot is displayed in red, while previous time is gray and future slots green. Information is saved to local storage and can be viewed throughout the day.
+ 
+![screenshot](./assets/imgs/screenshot.png)
 
-The rows of the table had to have relevant colouring correlating to whether the timeslot was in the past, present, or future in realtime. This was achieved using moment.js which we learnt about in week 5. This is also how I created the live clock in the header.
+  ## Technologies
+   * HTML
+   * CSS
+   * Bootstrap
+   * JavaScript
+   * JQuery
+   
+  ## Installation
+   No installation required, visit the URL to use.
 
-This week's challenge was a great exercise in DOM manipulation using jQuery and also utilised boostrap, to the degree that the index.html file was barely touched and I found it to be quite practical and useful.
 
-You can view the deployed application [here](https://mleftwich.github.io/Scheduler/)
+  ## Usage
+   Application can be used [here](https://mleftwich.github.io/Scheduler/).
 
-![img](./assets/imgs/screenshot.png)
+
+  ## Contributing
+   If you'd like to contribute, reach out through the email listed below.
+
+
+  ## Guidelines
+  Can be used to facilitate any scheduling needs in an average 9-5 day.
+
+
+  ## Tests
+   Tests conducted in development.
+
+
+  ## License
+   Licensed under [MIT](https://opensource.org/licenses/MIT) 
+
+   ---
+
+  ## Questions
+   For any questions you can find me at [GitHub](https://github.com/mleftwich) or email me at [mleftwich@live.com](mailto:mleftwich@live.com) 
+
+
+
